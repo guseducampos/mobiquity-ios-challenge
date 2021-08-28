@@ -144,6 +144,12 @@
 			dependencies = (
 			);
 			name = "mobiquity-ios-challenge";
+			packageProductDependencies = (
+				2881BFF426D9F31F00504CCA /* Moya */,
+				2881BFF726D9F45600504CCA /* CombineExt */,
+				2881BFFA26D9F5AC00504CCA /* CombineCocoa */,
+				2881BFFD26D9F9D500504CCA /* Nuke */,
+			);
 			productName = "mobiquity ios challenge";
 			productReference = 2881BFC026D9E4D600504CCA /* mobiquity-ios-challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +168,9 @@
 				2881BFD826D9E4D900504CCA /* PBXTargetDependency */,
 			);
 			name = "mobiquity-ios-challengeTests";
+			packageProductDependencies = (
+				2881C00B26DAF66400504CCA /* CombineExpectations */,
+			);
 			productName = "mobiquity ios challengeTests";
 			productReference = 2881BFD626D9E4D900504CCA /* mobiquity-ios-challengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -215,6 +224,13 @@
 				Base,
 			);
 			mainGroup = 2881BFB726D9E4D600504CCA;
+			packageReferences = (
+				2881BFF326D9F31F00504CCA /* XCRemoteSwiftPackageReference "Moya" */,
+				2881BFF626D9F45600504CCA /* XCRemoteSwiftPackageReference "CombineExt" */,
+				2881BFF926D9F5AC00504CCA /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				2881BFFC26D9F9D500504CCA /* XCRemoteSwiftPackageReference "Nuke" */,
+				2881C00A26DAF66400504CCA /* XCRemoteSwiftPackageReference "CombineExpectations" */,
+			);
 			productRefGroup = 2881BFC126D9E4D600504CCA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -475,7 +491,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "mobiquity ios challengeTests/Info.plist";
+				INFOPLIST_FILE = "mobiquity-ios-challengeTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -486,7 +502,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobiquity ios challenge.app/mobiquity ios challenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobiquity-ios-challenge.app/mobiquity-ios-challenge";
 			};
 			name = Debug;
 		};
@@ -496,7 +512,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "mobiquity ios challengeTests/Info.plist";
+				INFOPLIST_FILE = "mobiquity-ios-challengeTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,7 +523,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobiquity ios challenge.app/mobiquity ios challenge";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobiquity-ios-challenge.app/mobiquity-ios-challenge";
 			};
 			name = Release;
 		};
@@ -516,7 +532,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "mobiquity ios challengeUITests/Info.plist";
+				INFOPLIST_FILE = "mobiquity-ios-challengeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -535,7 +551,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "mobiquity ios challengeUITests/Info.plist";
+				INFOPLIST_FILE = "mobiquity-ios-challengeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,6 +605,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2881BFF326D9F31F00504CCA /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+		2881BFF626D9F45600504CCA /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+		2881BFF926D9F5AC00504CCA /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		2881BFFC26D9F9D500504CCA /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.3.4;
+			};
+		};
+		2881C00A26DAF66400504CCA /* XCRemoteSwiftPackageReference "CombineExpectations" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/CombineExpectations.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2881BFF426D9F31F00504CCA /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2881BFF326D9F31F00504CCA /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		2881BFF726D9F45600504CCA /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2881BFF626D9F45600504CCA /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
+		2881BFFA26D9F5AC00504CCA /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2881BFF926D9F5AC00504CCA /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+		2881BFFD26D9F9D500504CCA /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2881BFFC26D9F9D500504CCA /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		2881C00B26DAF66400504CCA /* CombineExpectations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2881C00A26DAF66400504CCA /* XCRemoteSwiftPackageReference "CombineExpectations" */;
+			productName = CombineExpectations;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2881BFB826D9E4D600504CCA /* Project object */;
 }
