@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,16 @@
 		2881BFD026D9E4D900504CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2881BFCE26D9E4D900504CCA /* LaunchScreen.storyboard */; };
 		2881BFDB26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */; };
 		2881BFE626D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFE526D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift */; };
+		2881BFF526D9F31F00504CCA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 2881BFF426D9F31F00504CCA /* Moya */; };
+		2881BFF826D9F45600504CCA /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 2881BFF726D9F45600504CCA /* CombineExt */; };
+		2881BFFB26D9F5AC00504CCA /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2881BFFA26D9F5AC00504CCA /* CombineCocoa */; };
+		2881BFFE26D9F9D500504CCA /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 2881BFFD26D9F9D500504CCA /* Nuke */; };
+		2881C00226DAB86200504CCA /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881C00126DAB86200504CCA /* NetworkProvider.swift */; };
+		2881C00426DABED000504CCA /* PhotoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881C00326DABED000504CCA /* PhotoTarget.swift */; };
+		2881C00626DAC00600504CCA /* FlickrTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881C00526DAC00600504CCA /* FlickrTargetType.swift */; };
+		2881C00926DAF5D800504CCA /* PhotoTargetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881C00826DAF5D800504CCA /* PhotoTargetTest.swift */; };
+		2881C00C26DAF66400504CCA /* CombineExpectations in Frameworks */ = {isa = PBXBuildFile; productRef = 2881C00B26DAF66400504CCA /* CombineExpectations */; };
+		2881C01026DAF7F200504CCA /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881C00F26DAF7F200504CCA /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,11 @@
 		2881BFE126D9E4D900504CCA /* mobiquity-ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobiquity-ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2881BFE526D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiquity_ios_challengeUITests.swift; sourceTree = "<group>"; };
 		2881BFE726D9E4D900504CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2881C00126DAB86200504CCA /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		2881C00326DABED000504CCA /* PhotoTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTarget.swift; sourceTree = "<group>"; };
+		2881C00526DAC00600504CCA /* FlickrTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrTargetType.swift; sourceTree = "<group>"; };
+		2881C00826DAF5D800504CCA /* PhotoTargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTargetTest.swift; sourceTree = "<group>"; };
+		2881C00F26DAF7F200504CCA /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2881BFF826D9F45600504CCA /* CombineExt in Frameworks */,
+				2881BFFB26D9F5AC00504CCA /* CombineCocoa in Frameworks */,
+				2881BFF526D9F31F00504CCA /* Moya in Frameworks */,
+				2881BFFE26D9F9D500504CCA /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2881C00C26DAF66400504CCA /* CombineExpectations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +119,7 @@
 		2881BFC226D9E4D600504CCA /* mobiquity-ios-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				2881BFFF26DAB83F00504CCA /* Networking */,
 				2881BFC326D9E4D600504CCA /* AppDelegate.swift */,
 				2881BFC526D9E4D600504CCA /* SceneDelegate.swift */,
 				2881BFC726D9E4D600504CCA /* ViewController.swift */,
@@ -113,6 +134,7 @@
 		2881BFD926D9E4D900504CCA /* mobiquity-ios-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				2881C00726DAF5BB00504CCA /* Networking */,
 				2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */,
 				2881BFDC26D9E4D900504CCA /* Info.plist */,
 			);
@@ -126,6 +148,49 @@
 				2881BFE726D9E4D900504CCA /* Info.plist */,
 			);
 			path = "mobiquity-ios-challengeUITests";
+			sourceTree = "<group>";
+		};
+		2881BFFF26DAB83F00504CCA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2881C00026DAB84B00504CCA /* Sources */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2881C00026DAB84B00504CCA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2881C00126DAB86200504CCA /* NetworkProvider.swift */,
+				2881C00326DABED000504CCA /* PhotoTarget.swift */,
+				2881C00526DAC00600504CCA /* FlickrTargetType.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2881C00726DAF5BB00504CCA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2881C00E26DAF7DE00504CCA /* Tests */,
+				2881C00D26DAF7D800504CCA /* Utils */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2881C00D26DAF7D800504CCA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2881C00F26DAF7F200504CCA /* URL+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2881C00E26DAF7DE00504CCA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2881C00826DAF5D800504CCA /* PhotoTargetTest.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +339,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2881C00426DABED000504CCA /* PhotoTarget.swift in Sources */,
 				2881BFC826D9E4D600504CCA /* ViewController.swift in Sources */,
+				2881C00226DAB86200504CCA /* NetworkProvider.swift in Sources */,
 				2881BFC426D9E4D600504CCA /* AppDelegate.swift in Sources */,
 				2881BFC626D9E4D600504CCA /* SceneDelegate.swift in Sources */,
+				2881C00626DAC00600504CCA /* FlickrTargetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +353,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2881BFDB26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift in Sources */,
+				2881C00926DAF5D800504CCA /* PhotoTargetTest.swift in Sources */,
+				2881C01026DAF7F200504CCA /* URL+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
