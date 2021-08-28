@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2881BFC426D9E4D600504CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFC326D9E4D600504CCA /* AppDelegate.swift */; };
+		2881BFC626D9E4D600504CCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFC526D9E4D600504CCA /* SceneDelegate.swift */; };
+		2881BFC826D9E4D600504CCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFC726D9E4D600504CCA /* ViewController.swift */; };
+		2881BFCB26D9E4D600504CCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2881BFC926D9E4D600504CCA /* Main.storyboard */; };
+		2881BFCD26D9E4D900504CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2881BFCC26D9E4D900504CCA /* Assets.xcassets */; };
+		2881BFD026D9E4D900504CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2881BFCE26D9E4D900504CCA /* LaunchScreen.storyboard */; };
+		2881BFDB26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */; };
+		2881BFE626D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFE526D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2881BFD726D9E4D900504CCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2881BFB826D9E4D600504CCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2881BFBF26D9E4D600504CCA;
+			remoteInfo = "mobiquity ios challenge";
+		};
+		2881BFE226D9E4D900504CCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2881BFB826D9E4D600504CCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2881BFBF26D9E4D600504CCA;
+			remoteInfo = "mobiquity ios challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2881BFC026D9E4D600504CCA /* mobiquity-ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobiquity-ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2881BFC326D9E4D600504CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2881BFC526D9E4D600504CCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2881BFC726D9E4D600504CCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2881BFCA26D9E4D600504CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2881BFCC26D9E4D900504CCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2881BFCF26D9E4D900504CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2881BFD126D9E4D900504CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2881BFD626D9E4D900504CCA /* mobiquity-ios-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobiquity-ios-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiquity_ios_challengeTests.swift; sourceTree = "<group>"; };
+		2881BFDC26D9E4D900504CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2881BFE126D9E4D900504CCA /* mobiquity-ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobiquity-ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2881BFE526D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiquity_ios_challengeUITests.swift; sourceTree = "<group>"; };
+		2881BFE726D9E4D900504CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2881BFBD26D9E4D600504CCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2881BFD326D9E4D900504CCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2881BFDE26D9E4D900504CCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2881BFB726D9E4D600504CCA = {
+			isa = PBXGroup;
+			children = (
+				2881BFC226D9E4D600504CCA /* mobiquity-ios-challenge */,
+				2881BFD926D9E4D900504CCA /* mobiquity-ios-challengeTests */,
+				2881BFE426D9E4D900504CCA /* mobiquity-ios-challengeUITests */,
+				2881BFC126D9E4D600504CCA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2881BFC126D9E4D600504CCA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2881BFC026D9E4D600504CCA /* mobiquity-ios-challenge.app */,
+				2881BFD626D9E4D900504CCA /* mobiquity-ios-challengeTests.xctest */,
+				2881BFE126D9E4D900504CCA /* mobiquity-ios-challengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2881BFC226D9E4D600504CCA /* mobiquity-ios-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				2881BFC326D9E4D600504CCA /* AppDelegate.swift */,
+				2881BFC526D9E4D600504CCA /* SceneDelegate.swift */,
+				2881BFC726D9E4D600504CCA /* ViewController.swift */,
+				2881BFC926D9E4D600504CCA /* Main.storyboard */,
+				2881BFCC26D9E4D900504CCA /* Assets.xcassets */,
+				2881BFCE26D9E4D900504CCA /* LaunchScreen.storyboard */,
+				2881BFD126D9E4D900504CCA /* Info.plist */,
+			);
+			path = "mobiquity-ios-challenge";
+			sourceTree = "<group>";
+		};
+		2881BFD926D9E4D900504CCA /* mobiquity-ios-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */,
+				2881BFDC26D9E4D900504CCA /* Info.plist */,
+			);
+			path = "mobiquity-ios-challengeTests";
+			sourceTree = "<group>";
+		};
+		2881BFE426D9E4D900504CCA /* mobiquity-ios-challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2881BFE526D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift */,
+				2881BFE726D9E4D900504CCA /* Info.plist */,
+			);
+			path = "mobiquity-ios-challengeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2881BFBF26D9E4D600504CCA /* mobiquity-ios-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2881BFEA26D9E4D900504CCA /* Build configuration list for PBXNativeTarget "mobiquity-ios-challenge" */;
+			buildPhases = (
+				2881BFBC26D9E4D600504CCA /* Sources */,
+				2881BFBD26D9E4D600504CCA /* Frameworks */,
+				2881BFBE26D9E4D600504CCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mobiquity-ios-challenge";
+			productName = "mobiquity ios challenge";
+			productReference = 2881BFC026D9E4D600504CCA /* mobiquity-ios-challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2881BFD526D9E4D900504CCA /* mobiquity-ios-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2881BFED26D9E4D900504CCA /* Build configuration list for PBXNativeTarget "mobiquity-ios-challengeTests" */;
+			buildPhases = (
+				2881BFD226D9E4D900504CCA /* Sources */,
+				2881BFD326D9E4D900504CCA /* Frameworks */,
+				2881BFD426D9E4D900504CCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2881BFD826D9E4D900504CCA /* PBXTargetDependency */,
+			);
+			name = "mobiquity-ios-challengeTests";
+			productName = "mobiquity ios challengeTests";
+			productReference = 2881BFD626D9E4D900504CCA /* mobiquity-ios-challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2881BFE026D9E4D900504CCA /* mobiquity-ios-challengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2881BFF026D9E4D900504CCA /* Build configuration list for PBXNativeTarget "mobiquity-ios-challengeUITests" */;
+			buildPhases = (
+				2881BFDD26D9E4D900504CCA /* Sources */,
+				2881BFDE26D9E4D900504CCA /* Frameworks */,
+				2881BFDF26D9E4D900504CCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2881BFE326D9E4D900504CCA /* PBXTargetDependency */,
+			);
+			name = "mobiquity-ios-challengeUITests";
+			productName = "mobiquity ios challengeUITests";
+			productReference = 2881BFE126D9E4D900504CCA /* mobiquity-ios-challengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2881BFB826D9E4D600504CCA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					2881BFBF26D9E4D600504CCA = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					2881BFD526D9E4D900504CCA = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 2881BFBF26D9E4D600504CCA;
+					};
+					2881BFE026D9E4D900504CCA = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 2881BFBF26D9E4D600504CCA;
+					};
+				};
+			};
+			buildConfigurationList = 2881BFBB26D9E4D600504CCA /* Build configuration list for PBXProject "mobiquity-ios-challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2881BFB726D9E4D600504CCA;
+			productRefGroup = 2881BFC126D9E4D600504CCA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2881BFBF26D9E4D600504CCA /* mobiquity-ios-challenge */,
+				2881BFD526D9E4D900504CCA /* mobiquity-ios-challengeTests */,
+				2881BFE026D9E4D900504CCA /* mobiquity-ios-challengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2881BFBE26D9E4D600504CCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2881BFD026D9E4D900504CCA /* LaunchScreen.storyboard in Resources */,
+				2881BFCD26D9E4D900504CCA /* Assets.xcassets in Resources */,
+				2881BFCB26D9E4D600504CCA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2881BFD426D9E4D900504CCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2881BFDF26D9E4D900504CCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2881BFBC26D9E4D600504CCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2881BFC826D9E4D600504CCA /* ViewController.swift in Sources */,
+				2881BFC426D9E4D600504CCA /* AppDelegate.swift in Sources */,
+				2881BFC626D9E4D600504CCA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2881BFD226D9E4D900504CCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2881BFDB26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2881BFDD26D9E4D900504CCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2881BFE626D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2881BFD826D9E4D900504CCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2881BFBF26D9E4D600504CCA /* mobiquity-ios-challenge */;
+			targetProxy = 2881BFD726D9E4D900504CCA /* PBXContainerItemProxy */;
+		};
+		2881BFE326D9E4D900504CCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2881BFBF26D9E4D600504CCA /* mobiquity-ios-challenge */;
+			targetProxy = 2881BFE226D9E4D900504CCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2881BFC926D9E4D600504CCA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2881BFCA26D9E4D600504CCA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2881BFCE26D9E4D900504CCA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2881BFCF26D9E4D900504CCA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2881BFE826D9E4D900504CCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2881BFE926D9E4D900504CCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2881BFEB26D9E4D900504CCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/mobiquity-ios-challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guseducampos.mobiquity-ios-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2881BFEC26D9E4D900504CCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/mobiquity-ios-challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guseducampos.mobiquity-ios-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2881BFEE26D9E4D900504CCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "mobiquity ios challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guseducampos.mobiquity-ios-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobiquity ios challenge.app/mobiquity ios challenge";
+			};
+			name = Debug;
+		};
+		2881BFEF26D9E4D900504CCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "mobiquity ios challengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guseducampos.mobiquity-ios-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobiquity ios challenge.app/mobiquity ios challenge";
+			};
+			name = Release;
+		};
+		2881BFF126D9E4D900504CCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "mobiquity ios challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guseducampos.mobiquity-ios-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "mobiquity ios challenge";
+			};
+			name = Debug;
+		};
+		2881BFF226D9E4D900504CCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "mobiquity ios challengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.guseducampos.mobiquity-ios-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "mobiquity ios challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2881BFBB26D9E4D600504CCA /* Build configuration list for PBXProject "mobiquity-ios-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2881BFE826D9E4D900504CCA /* Debug */,
+				2881BFE926D9E4D900504CCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2881BFEA26D9E4D900504CCA /* Build configuration list for PBXNativeTarget "mobiquity-ios-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2881BFEB26D9E4D900504CCA /* Debug */,
+				2881BFEC26D9E4D900504CCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2881BFED26D9E4D900504CCA /* Build configuration list for PBXNativeTarget "mobiquity-ios-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2881BFEE26D9E4D900504CCA /* Debug */,
+				2881BFEF26D9E4D900504CCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2881BFF026D9E4D900504CCA /* Build configuration list for PBXNativeTarget "mobiquity-ios-challengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2881BFF126D9E4D900504CCA /* Debug */,
+				2881BFF226D9E4D900504CCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2881BFB826D9E4D600504CCA /* Project object */;
+}
