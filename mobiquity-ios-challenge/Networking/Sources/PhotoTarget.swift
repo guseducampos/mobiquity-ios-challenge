@@ -9,7 +9,7 @@ import Moya
 import Foundation
 
 enum PhotoTarget: FlickrTargetType {
-    case search(text: String, page: Int, elementsPerPage: Int = 100)
+    case search(text: String, page: Int, elementsPerPage: Int)
 
     var task: Task {
         switch self {
@@ -34,6 +34,9 @@ enum PhotoTarget: FlickrTargetType {
     }
 
     var sampleData: Data {
-        Data()
+        switch self {
+        case .search:
+           return Bundle.main.jsonData(from: "PhotoSearchStubResponse") ?? Data()
+        }
     }
 }

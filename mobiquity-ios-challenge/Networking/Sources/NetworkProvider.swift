@@ -9,6 +9,9 @@ import Combine
 import Foundation
 import Moya
 
+/// Moya plugin that adds the token and the default parameters to a flickr
+/// request in order to return the content in JSON format and authenticate using the
+/// Token provided.
 struct FlickrPlugin: PluginType {
     private let token: String
 
