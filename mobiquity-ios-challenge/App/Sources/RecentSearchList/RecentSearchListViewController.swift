@@ -114,7 +114,7 @@ class RecentSearchListViewController: UIViewController {
 
     private func searchBy(recent: SearchItem) {
         searchController.searchBar.text = recent.name
-        searchController.searchBar.becomeFirstResponder()
+        searchController.isActive = true
         searchSubject.send(recent.name)
     }
 
