@@ -116,13 +116,13 @@ class PhotoGridViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             bottomActivityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            bottomActivityIndicator.bottomAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: bottomActivityIndicator.bottomAnchor, constant: 15),
 
             topActivityIndicator.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             topActivityIndicator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
 
             bottomErrorLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            bottomErrorLabel.bottomAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: bottomErrorLabel.bottomAnchor, constant: 15),
             bottomErrorLabel.heightAnchor.constraint(equalToConstant: 15),
 
             topErrorLabel.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -132,6 +132,8 @@ class PhotoGridViewController: UIViewController {
 
         collectionView.register(PhotoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: cellIdentifier)
+
+        collectionView.keyboardDismissMode = .onDrag
     }
 
     func updatePhotos(_ photos: [PhotoViewModel], isNewSearch: Bool) {
