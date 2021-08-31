@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2843120426DD73B000E457C3 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843120326DD73B000E457C3 /* PhotoViewModel.swift */; };
 		2843120626DD7A8600E457C3 /* PhotoViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843120526DD7A8600E457C3 /* PhotoViewModelTest.swift */; };
+		2843120926DD7DA500E457C3 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843120826DD7DA500E457C3 /* PhotoGridViewController.swift */; };
+		2843120B26DD868400E457C3 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843120A26DD868400E457C3 /* PhotoCollectionViewCell.swift */; };
+		2843120E26DD94E900E457C3 /* RecentSearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843120D26DD94E900E457C3 /* RecentSearchListViewController.swift */; };
+		2843121226DDA5A800E457C3 /* ActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843121126DDA5A800E457C3 /* ActivityIndicator+Extension.swift */; };
+		2843121426DDB46F00E457C3 /* RecentSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843121326DDB46F00E457C3 /* RecentSearchListView.swift */; };
+		2843121626DDB48F00E457C3 /* RecentSearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2843121526DDB48F00E457C3 /* RecentSearchListViewModel.swift */; };
 		2881BFC426D9E4D600504CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFC326D9E4D600504CCA /* AppDelegate.swift */; };
 		2881BFC626D9E4D600504CCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFC526D9E4D600504CCA /* SceneDelegate.swift */; };
 		2881BFC826D9E4D600504CCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFC726D9E4D600504CCA /* ViewController.swift */; };
@@ -63,6 +69,12 @@
 /* Begin PBXFileReference section */
 		2843120326DD73B000E457C3 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		2843120526DD7A8600E457C3 /* PhotoViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModelTest.swift; sourceTree = "<group>"; };
+		2843120826DD7DA500E457C3 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		2843120A26DD868400E457C3 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2843120D26DD94E900E457C3 /* RecentSearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchListViewController.swift; sourceTree = "<group>"; };
+		2843121126DDA5A800E457C3 /* ActivityIndicator+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
+		2843121326DDB46F00E457C3 /* RecentSearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchListView.swift; sourceTree = "<group>"; };
+		2843121526DDB48F00E457C3 /* RecentSearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchListViewModel.swift; sourceTree = "<group>"; };
 		2881BFC026D9E4D600504CCA /* mobiquity-ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobiquity-ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2881BFC326D9E4D600504CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2881BFC526D9E4D600504CCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +140,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2843120726DD7D5800E457C3 /* PhotoSearch */ = {
+			isa = PBXGroup;
+			children = (
+				2881C03826DC7D1A00504CCA /* PhotoSearchViewModel.swift */,
+				2843120826DD7DA500E457C3 /* PhotoGridViewController.swift */,
+				2843120A26DD868400E457C3 /* PhotoCollectionViewCell.swift */,
+			);
+			path = PhotoSearch;
+			sourceTree = "<group>";
+		};
+		2843120C26DD92D400E457C3 /* RecentSearchList */ = {
+			isa = PBXGroup;
+			children = (
+				2843120D26DD94E900E457C3 /* RecentSearchListViewController.swift */,
+				2843121326DDB46F00E457C3 /* RecentSearchListView.swift */,
+				2843121526DDB48F00E457C3 /* RecentSearchListViewModel.swift */,
+			);
+			path = RecentSearchList;
+			sourceTree = "<group>";
+		};
 		2881BFB726D9E4D600504CCA = {
 			isa = PBXGroup;
 			children = (
@@ -338,7 +370,8 @@
 		2881C03726DC7D1A00504CCA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2881C03826DC7D1A00504CCA /* PhotoSearchViewModel.swift */,
+				2843120C26DD92D400E457C3 /* RecentSearchList */,
+				2843120726DD7D5800E457C3 /* PhotoSearch */,
 				2843120326DD73B000E457C3 /* PhotoViewModel.swift */,
 			);
 			path = Sources;
@@ -357,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				2881C03E26DCA8DB00504CCA /* Publisher+Extension.swift */,
+				2843121126DDA5A800E457C3 /* ActivityIndicator+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -508,10 +542,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2843120926DD7DA500E457C3 /* PhotoGridViewController.swift in Sources */,
 				2881C01826DB01D700504CCA /* Photo.swift in Sources */,
+				2843121426DDB46F00E457C3 /* RecentSearchListView.swift in Sources */,
 				2881C01F26DBF77B00504CCA /* Bundle+Extension.swift in Sources */,
+				2843120E26DD94E900E457C3 /* RecentSearchListViewController.swift in Sources */,
 				2881C01426DB004F00504CCA /* PhotoSearchService.swift in Sources */,
 				2881C00426DABED000504CCA /* PhotoTarget.swift in Sources */,
+				2843120B26DD868400E457C3 /* PhotoCollectionViewCell.swift in Sources */,
 				2881C03F26DCA8DB00504CCA /* Publisher+Extension.swift in Sources */,
 				2843120426DD73B000E457C3 /* PhotoViewModel.swift in Sources */,
 				2881BFC826D9E4D600504CCA /* ViewController.swift in Sources */,
@@ -519,9 +557,11 @@
 				2881C02B26DC583100504CCA /* CacheStorage.swift in Sources */,
 				2881C02D26DC5F9500504CCA /* SearchItemService.swift in Sources */,
 				2881BFC426D9E4D600504CCA /* AppDelegate.swift in Sources */,
+				2843121226DDA5A800E457C3 /* ActivityIndicator+Extension.swift in Sources */,
 				2881C03926DC7D1A00504CCA /* PhotoSearchViewModel.swift in Sources */,
 				2881BFC626D9E4D600504CCA /* SceneDelegate.swift in Sources */,
 				2881C00626DAC00600504CCA /* FlickrTargetType.swift in Sources */,
+				2843121626DDB48F00E457C3 /* RecentSearchListViewModel.swift in Sources */,
 				2881C02F26DC702500504CCA /* SearchItem.swift in Sources */,
 				2881C01A26DB047400504CCA /* APIResponse.swift in Sources */,
 			);

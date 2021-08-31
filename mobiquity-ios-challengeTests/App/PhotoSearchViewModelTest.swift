@@ -126,12 +126,10 @@ class PhotoSearchViewModelTest: XCTestCase {
         let recordedStates = output.paginationState.record()
         let recordedPhotos = output.photos.record()
 
-        searchSubject.send("")
+        searchSubject.send("Kittens")
 
         let states = try wait(for: recordedStates.availableElements, timeout: 0.3)
         let photos = try wait(for: recordedPhotos.availableElements, timeout: 0.3)
-            .flatMap { $0 }
-        
 
         // Then
         XCTAssertEqual(states.count, 3)
@@ -144,7 +142,7 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
-                currentPage: 0,
+                currentPage: 1,
                 pages: nil,
                 isNewSearch: true
             ),
@@ -193,7 +191,6 @@ class PhotoSearchViewModelTest: XCTestCase {
 
         let states = try wait(for: recordedStates.availableElements, timeout: 0.3)
         let photos = try wait(for: recordedPhotos.availableElements, timeout: 0.3)
-            .flatMap { $0 }
 
         // Then
         XCTAssertEqual(states.count, 1)
@@ -274,6 +271,7 @@ class PhotoSearchViewModelTest: XCTestCase {
 
         let states = try wait(for: recordedStates.availableElements, timeout: 0.3)
         let photos = try wait(for: recordedPhotos.availableElements, timeout: 0.3)
+            .map(\.viewModel)
             .flatMap { $0 }
 
         // Then
@@ -287,7 +285,7 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
-                currentPage: 0,
+                currentPage: 1,
                 pages: nil,
                 isNewSearch: true
             ),
@@ -299,9 +297,9 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
-                currentPage: 1,
+                currentPage: 2,
                 pages: 100,
-                isNewSearch: true
+                isNewSearch: false
             ),
             State(
                 loadingState: .idle,
@@ -310,8 +308,7 @@ class PhotoSearchViewModelTest: XCTestCase {
                 isNewSearch: false
             )
         ])
-
-        XCTAssertEqual(photos, [photo, photo, photo].compactMap(PhotoViewModel.init))
+        XCTAssertEqual(photos.map(\.photo), [photo, photo])
     }
 
     func testWhenSearchPaginatesIsLoadingAndRequestForANewPage() throws {
@@ -390,6 +387,7 @@ class PhotoSearchViewModelTest: XCTestCase {
 
         let states = try wait(for: recordedStates.availableElements, timeout: 0.3)
         let photos = try wait(for: recordedPhotos.availableElements, timeout: 0.3)
+            .map(\.viewModel)
             .flatMap { $0 }
 
         // Then
@@ -403,7 +401,7 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
-                currentPage: 0,
+                currentPage: 1,
                 pages: nil,
                 isNewSearch: true
             ),
@@ -415,13 +413,13 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
-                currentPage: 1,
+                currentPage: 2,
                 pages: 100,
-                isNewSearch: true
+                isNewSearch: false
             )
         ])
 
-        XCTAssertEqual(photos, [photo].compactMap(PhotoViewModel.init))
+        XCTAssertEqual(photos.map(\.photo), [photo])
     }
 
     func testWhenSearchIsPerformedOneTimeAndThenTextChanges() throws {
@@ -528,7 +526,7 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
-                currentPage: 0,
+                currentPage: 1,
                 pages: nil,
                 isNewSearch: true
             ),
@@ -540,33 +538,33 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
+                currentPage: 2,
+                pages: 100,
+                isNewSearch: false
+            ),
+            State(
+                loadingState: .idle,
+                currentPage: 2,
+                pages: 100,
+                isNewSearch: false
+            ),
+            State(
+                loadingState: .loading,
+                currentPage: 3,
+                pages: 100,
+                isNewSearch: false
+            ),
+            State(
+                loadingState: .idle,
+                currentPage: 3,
+                pages: 100,
+                isNewSearch: false
+            ),
+            State(
+                loadingState: .loading,
                 currentPage: 1,
                 pages: 100,
                 isNewSearch: true
-            ),
-            State(
-                loadingState: .idle,
-                currentPage: 2,
-                pages: 100,
-                isNewSearch: false
-            ),
-            State(
-                loadingState: .loading,
-                currentPage: 2,
-                pages: 100,
-                isNewSearch: false
-            ),
-            State(
-                loadingState: .idle,
-                currentPage: 3,
-                pages: 100,
-                isNewSearch: false
-            ),
-            State(
-                loadingState: .loading,
-                currentPage: 3,
-                pages: 100,
-                isNewSearch: false
             ),
             State(
                 loadingState: .idle,
@@ -575,7 +573,9 @@ class PhotoSearchViewModelTest: XCTestCase {
                 isNewSearch: true
             )
         ])
-        XCTAssertEqual(photos.last, [photo, photo].compactMap(PhotoViewModel.init))
+
+        let retrievedPhotos = photos.last.map(\.viewModel)
+        XCTAssertEqual(retrievedPhotos?.map(\.photo), [photo, photo])
     }
 
     func testWhenSearchFails() throws {
@@ -589,7 +589,9 @@ class PhotoSearchViewModelTest: XCTestCase {
         }
 
         let recentSearchItemsService =  SearchItemServiceClient { _ in
-            fatalError("It shouldn't reach this path")
+           Just(())
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
         } getRecentsSearch: {
             fatalError("It shouldn't reach this path")
         }
@@ -616,11 +618,9 @@ class PhotoSearchViewModelTest: XCTestCase {
 
         let states = try wait(for: recordedStates.availableElements, timeout: 0.3)
         let photos = try wait(for: recordedPhotos.availableElements, timeout: 0.3)
-            .flatMap { $0 }
 
         // Then
         XCTAssertEqual(states.count, 3)
-        dump(states)
         XCTAssertEqual(states, [
             State(
                 loadingState: .idle,
@@ -630,7 +630,7 @@ class PhotoSearchViewModelTest: XCTestCase {
             ),
             State(
                 loadingState: .loading,
-                currentPage: 0,
+                currentPage: 1,
                 pages: nil,
                 isNewSearch: true
             ),
@@ -641,6 +641,7 @@ class PhotoSearchViewModelTest: XCTestCase {
                 isNewSearch: true
             ),
         ])
-        XCTAssertEqual(photos.count, 0)
+
+        XCTAssertEqual(photos.count, 1)
     }
 }

@@ -83,10 +83,7 @@ extension MoyaProvider where Target == MultiTarget {
     static var flickrProvider: MoyaProvider<MultiTarget> {
         MoyaProvider(
             plugins: [
-                FlickrPlugin(token: Constants.flickrToken),
-                NetworkLoggerPlugin(
-                    configuration: NetworkLoggerPlugin.Configuration(logOptions: .verbose)
-                )
+                FlickrPlugin(token: Constants.flickrToken)
             ]
         )
     }

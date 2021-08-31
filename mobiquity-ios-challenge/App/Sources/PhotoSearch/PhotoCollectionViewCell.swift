@@ -5,8 +5,44 @@
 //  Created by Gustavo Campos on 30/8/21.
 //
 
+import Nuke
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
-    
+    let photoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("NSCoder implementation missing")
+    }
+
+    func setupImage(viewModel: PhotoViewModel) {
+        Nuke.loadImage(with: viewModel.url, into: photoImageView)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        photoImageView.image = nil
+    }
+
+
+    private func setupView() {
+        contentView.addSubview(photoImageView)
+
+        NSLayoutConstraint.activate([
+            photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+    }
 }

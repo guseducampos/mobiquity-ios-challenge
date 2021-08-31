@@ -41,6 +41,11 @@ final class PhotoSearchViewModel {
         }
     }
 
+    struct PhotosSlice {
+        let viewModel: [PhotoViewModel]
+        let isNewSearch: Bool
+    }
+
     struct Input {
         let searchImage: AnyPublisher<String, Never>
         let nextPage: AnyPublisher<Void, Never>
@@ -48,7 +53,7 @@ final class PhotoSearchViewModel {
 
     struct Output {
         var paginationState: AnyPublisher<PaginationState, Never>
-        var photos: AnyPublisher<[PhotoViewModel], Never>
+        var photos: AnyPublisher<PhotosSlice, Never>
     }
 
     private let photoSearchService: PhotoSearchServiceClient
@@ -74,6 +79,7 @@ final class PhotoSearchViewModel {
         let searchEvent = input
             .searchImage
             .removeDuplicates()
+            .filter { !$0.isEmpty }
             .withLatestFrom(stateSubject) { text, state -> (String, PaginationState) in
                 (text, state)
             }
@@ -81,11 +87,23 @@ final class PhotoSearchViewModel {
             .filter { _, state in
                 !state.isLoading
             }
+            .flatMap {[recentSearchItemsService] (text, state) -> AnyPublisher<String, Never> in
+                /// Saving current search into the local storage
+                recentSearchItemsService.save(item: SearchItem(name: text))
+                    .map { _ in
+                        text
+                    }
+                    .catch { _  -> AnyPublisher<String, Never> in
+                        Just(text)
+                            .eraseToAnyPublisher()
+                    }
+                    .eraseToAnyPublisher()
+            }
 
         // Perform all of the logic related with the pagination
         // and the accumulation of the number of pages
         let paginationEvent = searchEvent
-            .flatMapLatest { (text, _) -> AnyPublisher<(String, PaginationState), Never> in
+            .flatMapLatest { text -> AnyPublisher<(String, PaginationState), Never> in
                 input
                     .nextPage
                     .prepend(()) // firing the publisher
@@ -93,11 +111,6 @@ final class PhotoSearchViewModel {
                     .filter { state in
                        return state.continueFetching && !state.isLoading
                     }
-                    .handleEvents(receiveOutput: { currentState in
-                        var currentState = currentState
-                        currentState.loadingState = .loading
-                        stateSubject.send(currentState)
-                    })
                     .map { _ in () }
                     .scan(0) { currentPage, _ in
                         currentPage + 1
@@ -111,27 +124,20 @@ final class PhotoSearchViewModel {
                         newState.isNewSearch = currentPage == 1 // Check if is a new request in order to reset the photos array
                         return (text, newState)
                     }
+                    .handleEvents(receiveOutput: { _, currentState in
+                        var currentState = currentState
+                        currentState.loadingState = .loading
+                        stateSubject.send(currentState)
+                    })
                     .eraseToAnyPublisher()
             }
 
         // Perform the request to the API
         // and accumulates the result from it.
         let searchRequest = paginationEvent
-            .flatMap { [photoSearchService, recentSearchItemsService] text, state -> AnyPublisher<[Photo], Never> in
+            .flatMap { [photoSearchService] text, state -> AnyPublisher<[Photo], Never> in
                 photoSearchService
                     .photoSearch(text: text, page: state.currentPage)
-                    .flatMap { response -> AnyPublisher<PhotoSearchResponse, Error> in
-                        /// Saving current search into the local storage
-                        recentSearchItemsService.save(item: SearchItem(name: text))
-                            .map { _ in
-                                response
-                            }.catch { _  -> AnyPublisher<PhotoSearchResponse, Error> in
-                                Just(response)
-                                    .setFailureType(to: Error.self)
-                                    .eraseToAnyPublisher()
-                            }
-                            .eraseToAnyPublisher()
-                    }
                     .result()
                     .handleEvents(receiveOutput: { result in
                         var newState = state
@@ -143,8 +149,7 @@ final class PhotoSearchViewModel {
                                 pages: response.photos.pages
                             )
                         case .failure:
-                            newState
-                                .updateState(
+                            newState.updateState(
                                     loadingState: .failure,
                                     currentPage: state.currentPage - 1, // Request fails needs to return to the previous page value
                                     pages: state.pages
@@ -165,25 +170,17 @@ final class PhotoSearchViewModel {
             .withLatestFrom(stateSubject) { photos, newState -> ([Photo], PaginationState) in
                 return (photos, newState)
             }
-            // Uses scan to accumulate the collected values
-            .scan([Photo](), { pastPhotos, newValues in
-                let (newPhotos, state) = newValues
-                // If is new search return the new elements
-                // Instead of accumulate them
-                if state.isNewSearch {
-                    return newPhotos
-                } else {
-                    return pastPhotos + newPhotos
-                }
-            })
+            .map { newPhotos, state -> PhotosSlice in
+                return PhotosSlice(
+                    viewModel: newPhotos.compactMap(PhotoViewModel.init),
+                    isNewSearch: state.isNewSearch
+                )
+            }
             .eraseToAnyPublisher()
 
         return Output(
             paginationState: stateSubject.eraseToAnyPublisher(),
             photos: searchRequest
-                .map { photos in
-                    photos.compactMap(PhotoViewModel.init)
-                }
                 .share()
                 .eraseToAnyPublisher()
         )

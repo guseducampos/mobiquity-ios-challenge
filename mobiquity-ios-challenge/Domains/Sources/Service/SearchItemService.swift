@@ -10,11 +10,11 @@ import Foundation
 
 struct SearchItemServiceClient {
     private let saveRecentEvent: (SearchItem) -> AnyPublisher<Void, Error>
-    private let getRecentsSearchEvent: () -> AnyPublisher<[SearchItem], Error>
+    private let getRecentsSearchEvent: () -> AnyPublisher<[SearchItem], Never>
 
     init(
         saveRecent: @escaping (SearchItem) -> AnyPublisher<Void, Error>,
-        getRecentsSearch: @escaping () -> AnyPublisher<[SearchItem], Error>
+        getRecentsSearch: @escaping () -> AnyPublisher<[SearchItem], Never>
     ) {
         self.saveRecentEvent = saveRecent
         self.getRecentsSearchEvent = getRecentsSearch
@@ -24,7 +24,7 @@ struct SearchItemServiceClient {
         saveRecentEvent(item)
     }
 
-    func getRecentItems() -> AnyPublisher<[SearchItem], Error> {
+    func getRecentItems() -> AnyPublisher<[SearchItem], Never> {
         getRecentsSearchEvent()
     }
 }
@@ -36,10 +36,18 @@ struct SearchItemService {
         getRecentItems()
             .tryMap { items -> AnyPublisher<Void, Error> in
                 var items = items
-                items.append(item)
-                return Just(try cacheStorage.save(object: items))
-                    .setFailureType(to: Error.self)
-                    .eraseToAnyPublisher()
+                let count = items.filter { $0.name == item.name }.count
+
+                if count == 0 {
+                    items.append(item)
+                    return Just(try cacheStorage.save(object: items))
+                        .setFailureType(to: Error.self)
+                        .eraseToAnyPublisher()
+                } else {
+                    return Just(())
+                        .setFailureType(to: Error.self)
+                        .eraseToAnyPublisher()
+                }
             }
             .switchToLatest()
             .eraseToAnyPublisher()
@@ -51,5 +59,15 @@ struct SearchItemService {
             .catch { _ in
                 Just([])
             }.eraseToAnyPublisher()
+    }
+}
+
+extension SearchItemServiceClient {
+   static var live: SearchItemServiceClient {
+        let service = SearchItemService(cacheStorage: CacheStorage(key: "RecentSearchItemsKey"))
+        return SearchItemServiceClient(
+            saveRecent: service.save,
+            getRecentsSearch: service.getRecentItems
+        )
     }
 }

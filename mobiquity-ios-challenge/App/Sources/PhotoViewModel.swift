@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct PhotoViewModel: Equatable {
-    private let photo: Photo
+struct PhotoViewModel: Hashable {
+    private let id: UUID = UUID() // Provide uniqueness in case the same image is found it twice
+    let photo: Photo
     let url: URL
 
     init?(photo: Photo) {

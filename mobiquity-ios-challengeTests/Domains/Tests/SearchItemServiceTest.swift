@@ -37,6 +37,29 @@ class SearchItemServiceTest: XCTestCase {
         XCTAssertEqual(items.first?.name, "test")
     }
 
+    func testSaveRepeatedRecentSearchItems() throws {
+        // Given
+        let service = SearchItemService(cacheStorage: cacheStorage)
+        let item = SearchItem(name: "test")
+
+        // Saving Items In Cache
+       try cacheStorage.save(object: [item])
+
+        // When - Saving same item again
+        let recorded = service
+            .save(item: item)
+            .flatMap {
+                service.getRecentItems()
+            }
+            .record()
+
+        let items = try wait(for: recorded.next(), timeout: 0.3)
+
+        // Then
+        XCTAssertEqual(items.count, 1)
+        XCTAssertEqual(items.first?.name, "test")
+    }
+
     func testSaveRecentSearchItemsThereAreItemsInCache() throws {
         // Given
         let service = SearchItemService(cacheStorage: cacheStorage)

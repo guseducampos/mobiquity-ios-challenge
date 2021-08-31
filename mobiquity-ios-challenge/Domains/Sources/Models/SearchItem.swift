@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct SearchItem: Codable {
+struct SearchItem: Codable, Identifiable {
+    var id = UUID()
     let name: String
 }

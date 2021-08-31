@@ -19,7 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: scene)
 
-        let navigationController = UINavigationController(rootViewController: ViewController())
+        let viewController = RecentSearchListViewController(
+            viewModel: .init(
+                photoSearchService: .live,
+                recentSearchItemsService: .live
+            ),
+            recentSearchViewModel: .init(service: .live)
+        )
+        let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

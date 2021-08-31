@@ -49,3 +49,12 @@ struct PhotoSearchService {
         )
     }
 }
+
+extension PhotoSearchServiceClient {
+   static var live: PhotoSearchServiceClient {
+        let photoSearchService = PhotoSearchService(
+            networkProvider: NetworkProvider(moyaProvider: .flickrProvider)
+        )
+        return PhotoSearchServiceClient(photoSearchRequest: photoSearchService.photoSearch)
+    }
+}
