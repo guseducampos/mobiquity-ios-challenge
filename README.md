@@ -10,11 +10,16 @@ App was built using UIKit, SwiftUI and Swift 5.3. iOS version supported starts f
 ### Requirements
  - In order tu run this project you must use Xcode 12.5 or superior
 
- ### Running instructions
+ ### Running Instructions
  - Download the project
  - Open mobiquity-ios-challenge.xcodeproj
  - Wait until the dependencies are installed
  - Run the app either on the simulator or a physical device
+
+ ### Test Running Instructions
+ - Open mobiquity-ios-challenge.xcodeproj
+ - Wait until the dependencies are installed
+ - Run the tests either on the simulator or a physical device
 
  ## Technical Details
 
