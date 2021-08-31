@@ -49,6 +49,26 @@ class PhotoGridViewController: UIViewController {
         return activityIndicator
     }()
 
+    private let topErrorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 14)
+        label.text = "An error occurred trying to fetch the images"
+        label.isHidden = true
+        label.textColor = .red
+        return label
+    }()
+
+    private let bottomErrorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 14)
+        label.text = "An error occurred trying to fetch the images"
+        label.isHidden = true
+        label.textColor = .red
+        return label
+    }()
+
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,6 +106,8 @@ class PhotoGridViewController: UIViewController {
         view.addSubview(collectionView)
         view.addSubview(bottomActivityIndicator)
         view.addSubview(topActivityIndicator)
+        view.addSubview(topErrorLabel)
+        view.addSubview(bottomErrorLabel)
 
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -94,12 +116,18 @@ class PhotoGridViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             bottomActivityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-
             bottomActivityIndicator.bottomAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
 
+            topActivityIndicator.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            topActivityIndicator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
 
-            topActivityIndicator.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            view.safeAreaLayoutGuide.topAnchor.constraint(equalTo: topActivityIndicator.topAnchor, constant: -15),
+            bottomErrorLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            bottomErrorLabel.bottomAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
+            bottomErrorLabel.heightAnchor.constraint(equalToConstant: 15),
+
+            topErrorLabel.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            topErrorLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            topErrorLabel.heightAnchor.constraint(equalToConstant: 15)
         ])
 
         collectionView.register(PhotoCollectionViewCell.self,
@@ -120,14 +148,38 @@ class PhotoGridViewController: UIViewController {
     }
 
     func updatePaginationState(state: PhotoSearchViewModel.PaginationState) {
-        if state.isNewSearch {
-            collectionView.contentInset.top = state.isLoading ? 50 : 0
-            topActivityIndicator.performAnimation(state.isLoading)
+
+        switch state.loadingState {
+        case .idle:
             bottomActivityIndicator.performAnimation(false)
-        } else {
-            bottomActivityIndicator.performAnimation(state.isLoading)
             topActivityIndicator.performAnimation(false)
-            collectionView.contentInset.bottom = state.isLoading ? 50 : 0
+            collectionView.contentInset.top = 0
+            collectionView.contentInset.bottom = 0
+            topErrorLabel.isHidden = true
+            bottomErrorLabel.isHidden = true
+        case .loading:
+            topErrorLabel.isHidden = true
+            bottomErrorLabel.isHidden = true
+            if state.isNewSearch {
+                collectionView.contentInset.top = 50
+                topActivityIndicator.performAnimation(true)
+                bottomActivityIndicator.performAnimation(false)
+            } else {
+                bottomActivityIndicator.performAnimation(true)
+                topActivityIndicator.performAnimation(false)
+                collectionView.contentInset.bottom = 50
+            }
+        case .failure:
+            bottomActivityIndicator.performAnimation(false)
+            topActivityIndicator.performAnimation(false)
+
+            if state.isNewSearch {
+                collectionView.contentInset.top = 50
+                topErrorLabel.isHidden = false
+            } else {
+                bottomErrorLabel.isHidden = false
+                collectionView.contentInset.bottom = 50
+            }
         }
     }
 
