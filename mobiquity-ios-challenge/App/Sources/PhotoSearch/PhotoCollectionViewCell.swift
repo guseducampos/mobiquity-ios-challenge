@@ -26,7 +26,15 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
 
     func setupImage(viewModel: PhotoViewModel) {
-        Nuke.loadImage(with: viewModel.url, into: photoImageView)
+        let options = ImageLoadingOptions(
+            placeholder: UIImage(systemName: "photo"),
+            transition: .fadeIn(duration: 0.2)
+        )
+        Nuke.loadImage(
+            with: viewModel.url,
+            options: options,
+            into: photoImageView
+        )
     }
 
     override func prepareForReuse() {
