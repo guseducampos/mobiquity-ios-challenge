@@ -19,7 +19,6 @@
 		2881BFC626D9E4D600504CCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFC526D9E4D600504CCA /* SceneDelegate.swift */; };
 		2881BFCD26D9E4D900504CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2881BFCC26D9E4D900504CCA /* Assets.xcassets */; };
 		2881BFD026D9E4D900504CCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2881BFCE26D9E4D900504CCA /* LaunchScreen.storyboard */; };
-		2881BFDB26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */; };
 		2881BFE626D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2881BFE526D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift */; };
 		2881BFF526D9F31F00504CCA /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 2881BFF426D9F31F00504CCA /* Moya */; };
 		2881BFF826D9F45600504CCA /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 2881BFF726D9F45600504CCA /* CombineExt */; };
@@ -80,7 +79,6 @@
 		2881BFCF26D9E4D900504CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2881BFD126D9E4D900504CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2881BFD626D9E4D900504CCA /* mobiquity-ios-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobiquity-ios-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiquity_ios_challengeTests.swift; sourceTree = "<group>"; };
 		2881BFDC26D9E4D900504CCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2881BFE126D9E4D900504CCA /* mobiquity-ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobiquity-ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2881BFE526D9E4D900504CCA /* mobiquity_ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobiquity_ios_challengeUITests.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 				2881C03026DC731A00504CCA /* Cache */,
 				2881C02026DC024F00504CCA /* Domains */,
 				2881C00726DAF5BB00504CCA /* Networking */,
-				2881BFDA26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift */,
 				2881BFDC26D9E4D900504CCA /* Info.plist */,
 			);
 			path = "mobiquity-ios-challengeTests";
@@ -568,7 +565,6 @@
 				2881C02226DC026F00504CCA /* PhotoSearchServiceTest.swift in Sources */,
 				2881C03326DC733D00504CCA /* CacheStorageTest.swift in Sources */,
 				2881C03526DC761C00504CCA /* SearchItemServiceTest.swift in Sources */,
-				2881BFDB26D9E4D900504CCA /* mobiquity_ios_challengeTests.swift in Sources */,
 				2881C00926DAF5D800504CCA /* PhotoTargetTest.swift in Sources */,
 				2881C01026DAF7F200504CCA /* URL+Extension.swift in Sources */,
 			);
